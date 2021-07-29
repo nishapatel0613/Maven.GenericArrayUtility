@@ -26,10 +26,10 @@ public class GetNumberOfOccurrencesTest {
     @Test
     public void longTest() {
         // Given
-        Long valueToEvaluate = 7L;
+        Integer valueToEvaluate = 7;
         Integer expected = 4;
-        Long[] inputArray = {1L, 2L, valueToEvaluate, 8L, 4L, 5L, valueToEvaluate, 0L, 9L, 8L, valueToEvaluate, valueToEvaluate};
-        ArrayUtility<Long> arrayUtility = new ArrayUtility<Long>(inputArray);
+        Integer[] inputArray = {1, 2, valueToEvaluate, 8, 4, 5, valueToEvaluate, 0, 9, 8, valueToEvaluate, valueToEvaluate};
+        ArrayUtility<Integer> arrayUtility = new ArrayUtility<Integer>(inputArray);
 
         // When
         Integer actual = arrayUtility.getNumberOfOccurrences(valueToEvaluate);
@@ -62,7 +62,7 @@ public class GetNumberOfOccurrencesTest {
         ArrayUtility<Object> arrayUtility = new ArrayUtility<Object>(inputArray);
 
         // When
-        Integer actual = arrayUtility.getNumberOfOccurrences(valueToEvaluate);
+        Integer actual = (Integer) arrayUtility.getNumberOfOccurrences(valueToEvaluate);
 
         // Then
         Assert.assertEquals(expected, actual);
